@@ -1,0 +1,40 @@
+{
+  "name": "@sedona-cms/blocks-meta-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "eslint": "eslint --fix '{src,__tests__}/**/*.{js,ts}'",
+    "test": "jest --color  --coverage"
+  },
+  "keywords": [],
+  "author": "Ivan Kalinichenko <kalinichenko@constlab.ru>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-typescript": "^7.9.0",
+    "@sedona-cms/eslint-config": "0.0.1",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^12.12.31",
+    "babel-jest": "^25.2.1",
+    "husky": "^4.2.3",
+    "jest": "^25.2.1",
+    "lint-staged": "^10.0.9",
+    "prettier": "^2.0.2",
+    "typescript": "^3.8.3",
+    "vue": "^2.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{src,__tests__}/**/*.{js,ts}": [
+      "prettier --write",
+      "npm run eslint"
+    ]
+  }
+}
