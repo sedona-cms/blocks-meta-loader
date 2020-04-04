@@ -10,7 +10,10 @@
     props: {
       text: {
         type: String,
-        default: '',
+        default: 'default text'
+      },
+      items: {
+        type: Array,
       },
       isDark: Boolean,
     },

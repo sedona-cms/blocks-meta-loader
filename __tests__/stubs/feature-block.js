@@ -2,5 +2,10 @@ import Vue from 'vue'
 
 export default Vue.extends({
   name: 'FeatureBlock',
-  props: {},
+  props: {
+    color: {
+      type: String,
+      required: true,
+    },
+  },
 })

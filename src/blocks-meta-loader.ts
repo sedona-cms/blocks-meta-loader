@@ -1,25 +1,45 @@
 import * as fs from 'fs'
 import * as path from 'path'
+import { VueFileParser } from './parsers/vue-file-parser'
+import { JsFileParser } from './parsers/js-file-parser'
 
 export class BlocksMetaLoader {
-  async getMetaFromFile(filePath: string | string[]): Promise<boolean> {
+  async getMetaFromFile(filePath: string | readonly string[]): Promise<BlockMeta[] | BlockMeta> {
     if (typeof filePath === 'string') {
       return await this.parseSingleFile(filePath)
     } else if (Array.isArray(filePath)) {
       const promises = filePath.map(item => this.parseSingleFile(item))
-      const result = await Promise.all(promises)
-      console.log(result)
+      return await Promise.all(promises)
     }
 
-    return true
+    throw new Error(`Blocks file path is incorrect. ${filePath}`)
   }
 
-  getMetaFromDirectory(directoryPath: string) {}
+  /* async getMetaFromDirectory(directoryPath: string): Promise<BlockMeta[]> {
+    if (!fs.existsSync(directoryPath)) {
+      throw new Error(`Path ${directoryPath} not exists`)
+    }
+    const files = fs.readdirSync(directoryPath)
+    const promises = files.map(file => this.getMetaFromFile(file))
 
-  private async parseSingleFile(filePath: string): Promise<any> {
+    return await Promise.all(promises)
+  } */
+
+  private async parseSingleFile(filePath: string): Promise<BlockMeta> {
     if (!fs.existsSync(filePath)) {
       throw new Error(`Block file does not exists in ${filePath}`)
     }
-    return Promise.resolve('ok')
+    const stat = fs.statSync(filePath)
+    if (stat.isFile()) {
+      switch (path.extname(filePath)) {
+        case '.js':
+          return Promise.resolve(new JsFileParser().parseFile(filePath))
+        case '.vue': {
+          return Promise.resolve(new VueFileParser().parse(filePath))
+        }
+      }
+    }
+
+    throw new Error(`Error parsing single component`)
   }
 }

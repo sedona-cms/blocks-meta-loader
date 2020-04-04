@@ -11,7 +11,7 @@ test('load block from single file', async () => {
 })
 
 test('load block from not exists single file', () => {
-  const blockFilePath = path.resolve(__dirname, 'stubs/wring-file-path.vue')
+  const blockFilePath = path.resolve(__dirname, 'stubs/wrong-file-path.vue')
 
   expect(blocksMetaLoader.getMetaFromFile(blockFilePath)).rejects.toThrow()
 })

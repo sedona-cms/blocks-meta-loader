@@ -10,13 +10,19 @@
   "keywords": [],
   "author": "Ivan Kalinichenko <kalinichenko@constlab.ru>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/parser": "^7.9.4",
+    "@babel/traverse": "^7.9.0",
+    "@vue/component-compiler-utils": "^3.1.1",
+    "vue-template-compiler": "^2.6.11"
+  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-typescript": "^7.9.0",
-    "@sedona-cms/eslint-config": "0.0.1",
-    "@types/jest": "^25.1.5",
+    "@sedona-cms/eslint-config": "^0.0.2",
+    "@types/babel-traverse": "^6.25.5",
+    "@types/jest": "^25.2.1",
     "@types/node": "^12.12.34",
     "babel-jest": "^25.2.6",
     "husky": "^4.2.3",
