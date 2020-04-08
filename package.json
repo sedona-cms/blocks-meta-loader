@@ -10,25 +10,31 @@
   "keywords": [],
   "author": "Ivan Kalinichenko <kalinichenko@constlab.ru>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sedona-cms/blocks-meta-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sedona-cms/blocks-meta-loader/issues"
+  },
   "dependencies": {
     "@babel/parser": "^7.9.4",
-    "@babel/traverse": "^7.9.0",
-    "@vue/component-compiler-utils": "^3.1.1",
+    "@babel/traverse": "^7.9.5",
+    "@vue/component-compiler-utils": "^3.1.2",
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "@babel/preset-typescript": "^7.9.0",
     "@sedona-cms/eslint-config": "^0.0.2",
     "@types/babel-traverse": "^6.25.5",
     "@types/jest": "^25.2.1",
-    "@types/node": "^12.12.34",
-    "babel-jest": "^25.2.6",
+    "@types/node": "^12.12.35",
+    "babel-jest": "^25.3.0",
     "husky": "^4.2.3",
-    "jest": "^25.2.7",
-    "lint-staged": "^10.1.1",
-    "prettier": "^2.0.2",
+    "jest": "^25.3.0",
+    "lint-staged": "^10.1.2",
+    "prettier": "^2.0.4",
     "typescript": "^3.8.3",
     "vue": "^2.6"
   },
