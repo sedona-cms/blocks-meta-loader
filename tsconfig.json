@@ -11,8 +11,6 @@
     "checkJs": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "jsx": "preserve",
-    "jsxFactory": "h",
     "strict": true,
     "removeComments": false,
     "importHelpers": true,
