@@ -4,8 +4,9 @@
   "description": "Loads meta information from vue components for Sedona CMS block editor",
   "main": "dist/index.js",
   "scripts": {
-    "eslint": "eslint --fix '{src,__tests__}/**/*.{js,ts}'",
-    "test": "jest --color  --coverage"
+    "eslint": "make -f Makefile lint",
+    "test": "make -f Makefile test",
+    "build": "make -f Makefile build"
   },
   "keywords": [],
   "author": "Ivan Kalinichenko <kalinichenko@constlab.ru>",

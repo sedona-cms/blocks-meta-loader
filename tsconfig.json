@@ -18,10 +18,11 @@
     "importHelpers": true,
     "listFiles": false,
     "lib": ["ES6", "DOM", "DOM.Iterable"],
-    "outDir": "./lib",
+    "outDir": "./dist",
     "typeRoots": [
       "./node_modules/@types", "./types"
     ]
   },
+  "include": ["src", "types"],
   "exclude": ["node_modules", "__tests__", "coverage"]
 }
