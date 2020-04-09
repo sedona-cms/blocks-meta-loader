@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`load block from list files 1`] = `
+Array [
+  Object {
+    "name": "TextBlock",
+    "props": Object {
+      "fontSize": Object {
+        "default": 12,
+        "required": false,
+        "type": "number",
+      },
+      "isDark": Object {
+        "default": false,
+        "required": false,
+        "type": "boolean",
+      },
+      "items": Object {
+        "default": Array [],
+        "required": false,
+        "type": "array",
+      },
+      "text": Object {
+        "default": "default text",
+        "required": false,
+        "type": "string",
+      },
+    },
+  },
+  Object {
+    "name": "FeatureBlock",
+    "props": Object {
+      "color": Object {
+        "default": "",
+        "required": true,
+        "type": "string",
+      },
+    },
+  },
+]
+`;
+
+exports[`load block from single file 1`] = `
+Object {
+  "name": "TextBlock",
+  "props": Object {
+    "fontSize": Object {
+      "default": 12,
+      "required": false,
+      "type": "number",
+    },
+    "isDark": Object {
+      "default": false,
+      "required": false,
+      "type": "boolean",
+    },
+    "items": Object {
+      "default": Array [],
+      "required": false,
+      "type": "array",
+    },
+    "text": Object {
+      "default": "default text",
+      "required": false,
+      "type": "string",
+    },
+  },
+}
+`;

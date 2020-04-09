@@ -15,6 +15,10 @@
       items: {
         type: Array,
       },
+      fontSize: {
+        type: Number,
+        default: 12,
+      },
       isDark: Boolean,
     },
   }
