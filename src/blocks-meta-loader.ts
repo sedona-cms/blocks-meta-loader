@@ -2,6 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { VueFileParser } from './parsers/vue-file-parser'
 import { JsFileParser } from './parsers/js-file-parser'
+import { BlockMeta } from './meta'
 
 export class BlocksMetaLoader {
   async getMetaFromFile(filePath: string | readonly string[]): Promise<BlockMeta[] | BlockMeta> {

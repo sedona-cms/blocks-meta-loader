@@ -2,6 +2,7 @@ import * as fs from 'fs'
 import * as babel from '@babel/parser'
 import traverse from '@babel/traverse'
 import { Expression, ObjectMethod, ObjectProperty, PatternLike, SpreadElement } from '@babel/types'
+import { BlockMeta, BlockProp } from '../meta'
 
 export class JsFileParser {
   parseFile(blockPath: string): BlockMeta {

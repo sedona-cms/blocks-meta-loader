@@ -1,4 +1,4 @@
-type BlockMeta = {
+export type BlockMeta = {
   name?: string
   description?: string
   icon?: string // default is 'extension'
@@ -8,13 +8,8 @@ type BlockMeta = {
   }
 }
 
-type BlockProp = {
+export type BlockProp = {
   type?: string
   required?: boolean
-  default?: any
-}
-
-type BlockPropDefault = {
-  type?: any
   default?: any
 }

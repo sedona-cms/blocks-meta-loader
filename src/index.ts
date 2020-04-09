@@ -1,3 +1,4 @@
 import { BlocksMetaLoader } from './blocks-meta-loader'
+import { BlockProp, BlockMeta } from './meta'
 
-export { BlocksMetaLoader }
+export { BlocksMetaLoader, BlockMeta, BlockProp }

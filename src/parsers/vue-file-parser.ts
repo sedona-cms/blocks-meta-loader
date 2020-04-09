@@ -3,6 +3,7 @@ import * as templateCompiler from 'vue-template-compiler'
 import { SFCDescriptor, parse } from '@vue/component-compiler-utils'
 import { VueTemplateCompiler } from '@vue/component-compiler-utils/dist/types'
 import { JsFileParser } from './js-file-parser'
+import { BlockMeta } from '../meta'
 
 export class VueFileParser {
   parse(blockPath: string): BlockMeta {

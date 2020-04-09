@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Loads meta information from vue components for Sedona CMS block editor",
   "main": "dist/index.js",
+  "typings": "dist/types/index.d.ts",
   "scripts": {
     "lint": "make -f Makefile lint",
     "test": "make -f Makefile test",
@@ -47,7 +48,7 @@
   "lint-staged": {
     "{src,__tests__}/**/*.{js,ts}": [
       "prettier --write",
-      "npm run eslint"
+      "npm run lint"
     ]
   }
 }

@@ -16,11 +16,7 @@
     "importHelpers": true,
     "listFiles": false,
     "lib": ["ES6", "DOM", "DOM.Iterable"],
-    "outDir": "./dist",
-    "typeRoots": [
-      "./node_modules/@types", "./types"
-    ]
+    "outDir": "./dist"
   },
-  "include": ["src", "types"],
-  "exclude": ["node_modules", "__tests__", "coverage"]
+  "exclude": ["node_modules", "__tests__", "coverage", "jest.config.js"]
 }
