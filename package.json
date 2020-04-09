@@ -4,7 +4,7 @@
   "description": "Loads meta information from vue components for Sedona CMS block editor",
   "main": "dist/index.js",
   "scripts": {
-    "eslint": "make -f Makefile lint",
+    "lint": "make -f Makefile lint",
     "test": "make -f Makefile test",
     "build": "make -f Makefile build"
   },

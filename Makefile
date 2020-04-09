@@ -8,5 +8,5 @@ clear-all:
 	rm -rf dist/
 	rm -rf types/generated/
 
-build: lint test clear-all
+build: clear-all
 	npx tsc --project tsconfig.build.json
