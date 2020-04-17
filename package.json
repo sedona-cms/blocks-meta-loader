@@ -1,6 +1,6 @@
 {
   "name": "@sedona-cms/blocks-meta-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Loads meta information from vue components for Sedona CMS block editor",
   "main": "dist/index.js",
   "typings": "dist/types/index.d.ts",
