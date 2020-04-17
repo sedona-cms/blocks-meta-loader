@@ -13,6 +13,7 @@ export class JsFileParser {
   parseContent(script: string): BlockMeta {
     const result: BlockMeta = {
       name: '',
+      group: 'general',
       props: {},
     }
     let properties: ObjectProperty[] = []
