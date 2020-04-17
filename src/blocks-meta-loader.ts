@@ -16,15 +16,17 @@ export class BlocksMetaLoader {
     throw new Error(`Blocks file path is incorrect. ${filePath}`)
   }
 
-  /* async getMetaFromDirectory(directoryPath: string): Promise<BlockMeta[]> {
+  async getMetaFromDirectory(directoryPath: string): Promise<BlockMeta[]> {
     if (!fs.existsSync(directoryPath)) {
       throw new Error(`Path ${directoryPath} not exists`)
     }
     const files = fs.readdirSync(directoryPath)
-    const promises = files.map(file => this.getMetaFromFile(file))
+    const promises = files.map(
+      file => this.getMetaFromFile(path.resolve(directoryPath, file)) as BlockMeta
+    )
 
     return await Promise.all(promises)
-  } */
+  }
 
   private async parseSingleFile(filePath: string): Promise<BlockMeta> {
     if (!fs.existsSync(filePath)) {
