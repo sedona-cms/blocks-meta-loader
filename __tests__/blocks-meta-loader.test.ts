@@ -24,3 +24,10 @@ test('load block from list files', async () => {
 
   expect(blockMeta).toMatchSnapshot()
 })
+
+test('load blocks from directory', async () => {
+  const blocksPath = path.resolve(__dirname, 'stubs')
+  const blockMeta = await blocksMetaLoader.getMetaFromDirectory(blocksPath)
+
+  expect(blockMeta).toMatchSnapshot()
+})
