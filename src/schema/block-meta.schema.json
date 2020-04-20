@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Block meta object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Pretty block name",
+      "minLength": 2
+    },
+    "description": {
+      "type": "string",
+      "description": "Block description for UI"
+    },
+    "group": {
+      "type": "string",
+      "default": "general",
+      "description": "Block group"
+    },
+    "icon": {
+      "type": "string",
+      "default": "extension",
+      "description": "Block icon in UI palette"
+    },
+    "props": {
+      "type": "object",
+      "description": "Block props meta",
+      "default": {},
+      "additionalProperties": {
+        "$ref": "#/definitions/propFieldMeta"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "propFieldMeta": {
+      "type": "object",
+      "description": "Block field meta",
+      "properties": {
+        "type": {
+          "description": "Prop editor type"
+        },
+        "default": {
+          "description": "Prop default value"
+        },
+        "required": {
+          "type": "boolean",
+          "default": false,
+          "description": "Required prop"
+        },
+        "title": {
+          "type": "string",
+          "description": "Prop title"
+        },
+        "options": {
+          "description": "Options for prop editor UI"
+        }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    }
+  }
+}

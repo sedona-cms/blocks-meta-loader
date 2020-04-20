@@ -9,24 +9,29 @@ Array [
       "fontSize": Object {
         "default": 12,
         "required": false,
+        "title": "Font Size",
         "type": "number",
       },
       "isDark": Object {
         "default": false,
         "required": false,
+        "title": "Is Dark",
         "type": "boolean",
       },
       "items": Object {
         "default": Array [],
         "required": false,
+        "title": "Items",
         "type": "array",
       },
       "text": Object {
         "default": "default text",
         "required": false,
+        "title": "Text",
         "type": "string",
       },
     },
+    "title": "Text Block",
   },
   Object {
     "group": "general",
@@ -35,9 +40,11 @@ Array [
       "color": Object {
         "default": "",
         "required": true,
+        "title": "Color",
         "type": "string",
       },
     },
+    "title": "Feature Block",
   },
 ]
 `;
@@ -50,24 +57,29 @@ Object {
     "fontSize": Object {
       "default": 12,
       "required": false,
+      "title": "Font Size",
       "type": "number",
     },
     "isDark": Object {
       "default": false,
       "required": false,
+      "title": "Is Dark",
       "type": "boolean",
     },
     "items": Object {
       "default": Array [],
       "required": false,
+      "title": "Items",
       "type": "array",
     },
     "text": Object {
       "default": "default text",
       "required": false,
+      "title": "Text",
       "type": "string",
     },
   },
+  "title": "Text Block",
 }
 `;
 
@@ -80,9 +92,49 @@ Array [
       "color": Object {
         "default": "",
         "required": true,
+        "title": "Color",
         "type": "string",
       },
     },
+    "title": "Feature Block",
+  },
+  Object {
+    "group": "images",
+    "icon": "image",
+    "name": "ImageBlock",
+    "props": Object {},
+    "title": "Image",
+  },
+  Object {
+    "group": "general",
+    "icon": "image",
+    "name": "TeaserBlock",
+    "props": Object {
+      "caption": Object {
+        "default": "default text",
+        "options": Object {},
+        "required": false,
+        "title": "Caption",
+        "type": "text",
+      },
+      "variant": Object {
+        "default": "red",
+        "options": Object {
+          "variants": Array [
+            "red",
+            "blue",
+            Object {
+              "label": "Green variant",
+              "value": "green",
+            },
+          ],
+        },
+        "required": false,
+        "title": "Variants",
+        "type": "radio-group",
+      },
+    },
+    "title": "Teaser block",
   },
   Object {
     "group": "general",
@@ -91,24 +143,29 @@ Array [
       "fontSize": Object {
         "default": 12,
         "required": false,
+        "title": "Font Size",
         "type": "number",
       },
       "isDark": Object {
         "default": false,
         "required": false,
+        "title": "Is Dark",
         "type": "boolean",
       },
       "items": Object {
         "default": Array [],
         "required": false,
+        "title": "Items",
         "type": "array",
       },
       "text": Object {
         "default": "default text",
         "required": false,
+        "title": "Text",
         "type": "string",
       },
     },
+    "title": "Text Block",
   },
 ]
 `;

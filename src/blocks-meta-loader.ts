@@ -22,7 +22,7 @@ export class BlocksMetaLoader {
     }
     const files = fs.readdirSync(directoryPath)
     const promises = files.map(
-      file => this.getMetaFromFile(path.resolve(directoryPath, file)) as BlockMeta
+      file => this.getMetaFromFile(path.resolve(directoryPath, file)) as Promise<BlockMeta>
     )
 
     return await Promise.all(promises)
