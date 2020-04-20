@@ -28,14 +28,14 @@
   "devDependencies": {
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-typescript": "^7.9.0",
-    "@sedona-cms/eslint-config": "^1.0.0",
+    "@sedona-cms/eslint-config": "^1.0.1",
     "@types/babel-traverse": "^6.25.5",
     "@types/jest": "^25.2.1",
     "@types/node": "^12.12.36",
-    "babel-jest": "^25.3.0",
+    "babel-jest": "^25.4.0",
     "husky": "^4.2.5",
-    "jest": "^25.3.0",
-    "lint-staged": "^10.1.5",
+    "jest": "^25.4.0",
+    "lint-staged": "^10.1.6",
     "prettier": "^2.0.4",
     "typescript": "^3.8.3",
     "vue": "^2.6"
