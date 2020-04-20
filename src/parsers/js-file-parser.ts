@@ -2,6 +2,7 @@ import * as fs from 'fs'
 import * as babel from '@babel/parser'
 import traverse from '@babel/traverse'
 import { Expression, ObjectMethod, ObjectProperty, PatternLike, SpreadElement } from '@babel/types'
+import startCase from 'lodash/startCase'
 import { BlockMeta, BlockProp } from '../meta'
 
 export class JsFileParser {
@@ -12,7 +13,6 @@ export class JsFileParser {
 
   parseContent(script: string): BlockMeta {
     const result: BlockMeta = {
-      name: '',
       group: 'general',
       props: {},
     }
@@ -22,9 +22,11 @@ export class JsFileParser {
       ObjectProperty(scope) {
         const keyName = scope.node.key.name
         switch (keyName) {
-          case 'name':
+          case 'name': {
             result.name = scope.node?.value['value'] || ''
+            result.title = startCase(result.name)
             break
+          }
           case 'props':
             properties = scope.node.value?.['properties'] || []
             break
@@ -48,7 +50,11 @@ export class JsFileParser {
   private parseProps(properties: ObjectProperty[]): { [key: string]: BlockProp } {
     const result: { [key: string]: BlockProp } = {}
     for (const property of properties) {
-      result[property.key?.name || ''] = this.parsePropValue(property.value)
+      const propName = property.key?.name || 'unknown'
+      result[propName] = {
+        title: startCase(propName),
+        ...this.parsePropValue(property.value),
+      }
     }
     return result
   }
