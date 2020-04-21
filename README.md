@@ -6,6 +6,10 @@ Loads meta information from vue components for Sedona CMS block editor.
 
 May be used for component libraries that may be used in admin UI Sedona CMS.
 
+## General
+
+The meta information of the block is not necessary to specifically describe. It will be automatically received when parsing the component file.
+But it can be supplemented in a custom section in vue file or in a separate json file.
 ## Example
 
 will be soon
