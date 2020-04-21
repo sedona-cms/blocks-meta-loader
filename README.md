@@ -13,3 +13,30 @@ will be soon
 ## Install
 
 `npm i -D @sedona-cms/blocks-meta-loader`
+
+## Usage
+
+```typescript
+import { BlocksMetaLoader, BlockMeta } from '@sedona-cms/blocks-meta-loader'
+
+const loader = new BlocksMetaLoader()
+const blocksMeta: BlockMeta[] = loader.getMetaFromFile('<path-to-vue-component>')
+
+/// blocksMeta may be looks like this
+
+`Array [
+  Object {
+     "group": "general",
+     "name": "<Block Name>",
+     "props": Object {
+       "color": Object {
+         "default": "",
+         "required": true,
+         "title": "Color",
+         "type": "string",
+       },
+     },
+     "title": "Pretty Block Name",
+   },]`
+
+```
