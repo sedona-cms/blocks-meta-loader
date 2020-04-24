@@ -4,6 +4,7 @@ export type BlockMeta = {
   description?: string
   icon?: string // default is 'extension'
   group: string // default is 'general'
+  path?: string // path to component file, use for import
   props: {
     [key: string]: BlockProp
   }
