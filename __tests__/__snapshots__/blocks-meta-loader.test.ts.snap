@@ -16,7 +16,7 @@ Array [
         "default": false,
         "required": false,
         "title": "Is Dark",
-        "type": "boolean",
+        "type": "checkbox",
       },
       "items": Object {
         "default": Array [],
@@ -64,7 +64,7 @@ Object {
       "default": false,
       "required": false,
       "title": "Is Dark",
-      "type": "boolean",
+      "type": "checkbox",
     },
     "items": Object {
       "default": Array [],
@@ -150,7 +150,7 @@ Array [
         "default": false,
         "required": false,
         "title": "Is Dark",
-        "type": "boolean",
+        "type": "checkbox",
       },
       "items": Object {
         "default": Array [],

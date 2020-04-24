@@ -88,13 +88,13 @@ export class JsFileParser {
     switch (identifier) {
       case 'String':
         return {
-          type: 'string',
+          type: 'text',
           required: false,
           default: '',
         }
       case 'Boolean':
         return {
-          type: 'boolean',
+          type: 'checkbox',
           required: false,
           default: false,
         }
@@ -106,13 +106,13 @@ export class JsFileParser {
         }
       case 'Array':
         return {
-          type: 'array',
+          type: 'textarea',
           required: false,
           default: [],
         }
       case 'Object':
         return {
-          type: 'object',
+          type: 'textarea',
           required: false,
           default: {},
         }
@@ -124,7 +124,7 @@ export class JsFileParser {
         }
       default:
         return {
-          type: 'string',
+          type: 'text',
           required: false,
           default: '',
         }
