@@ -16,6 +16,11 @@ test('load block from not exists single file', () => {
   expect(blocksMetaLoader.getMetaFromFile(blockFilePath)).rejects.toThrow()
 })
 
+test('load block with bad type argument', () => {
+  // @ts-ignore
+  expect(blocksMetaLoader.getMetaFromFile(123)).rejects.toThrow()
+})
+
 test('load block from list files', async () => {
   const blockMeta = await blocksMetaLoader.getMetaFromFile([
     path.resolve(__dirname, 'stubs/text-block.vue'),
@@ -30,4 +35,10 @@ test('load blocks from directory', async () => {
   const blockMeta = await blocksMetaLoader.getMetaFromDirectory(blocksPath)
 
   expect(blockMeta).toMatchSnapshot()
+})
+
+test('load blocks from wrong directory', () => {
+  const blocksPath = path.resolve(__dirname, 'wrong-path')
+
+  expect(blocksMetaLoader.getMetaFromDirectory(blocksPath)).rejects.toThrow()
 })
