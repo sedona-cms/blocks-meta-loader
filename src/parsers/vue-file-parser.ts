@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import path from 'path'
 import * as templateCompiler from 'vue-template-compiler'
 import Ajv from 'ajv'
 import { SFCDescriptor, parse } from '@vue/component-compiler-utils'
@@ -26,7 +27,10 @@ export class VueFileParser {
       return parsed
     }
 
-    return this.getNormalizedBlockMeta(parsed, blockMeta)
+    return {
+      ...this.getNormalizedBlockMeta(parsed, blockMeta),
+      path: path.parse(blockPath).name,
+    }
   }
 
   private readBlockFile(blockPath: string): SFCDescriptor {
