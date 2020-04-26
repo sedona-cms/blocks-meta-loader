@@ -35,6 +35,6 @@ export const typeDefaults: { [key: string]: BlockProp } = {
     type: 'date',
     editor: 'date',
     required: false,
-    default: Date.now(),
+    default: new Date(),
   },
 }
