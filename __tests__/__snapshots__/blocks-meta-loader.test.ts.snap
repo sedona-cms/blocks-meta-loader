@@ -4,11 +4,14 @@ exports[`load block from list files 1`] = `
 Array [
   Object {
     "group": "general",
+    "icon": "extension",
     "name": "TextBlock",
+    "path": "text-block",
     "props": Object {
       "fontSize": Object {
         "default": 12,
         "editor": "number",
+        "options": Object {},
         "required": false,
         "title": "Font Size",
         "type": "number",
@@ -16,6 +19,7 @@ Array [
       "isDark": Object {
         "default": false,
         "editor": "checkbox",
+        "options": Object {},
         "required": false,
         "title": "Is Dark",
         "type": "boolean",
@@ -23,6 +27,7 @@ Array [
       "items": Object {
         "default": Array [],
         "editor": "textarea",
+        "options": Object {},
         "required": false,
         "title": "Items",
         "type": "array",
@@ -30,12 +35,13 @@ Array [
       "text": Object {
         "default": "default text",
         "editor": "text",
+        "options": Object {},
         "required": false,
         "title": "Text",
         "type": "string",
       },
     },
-    "title": "Text Block",
+    "title": "Text",
   },
   Object {
     "group": "general",
@@ -65,11 +71,14 @@ Array [
 exports[`load block from single file 1`] = `
 Object {
   "group": "general",
+  "icon": "extension",
   "name": "TextBlock",
+  "path": "text-block",
   "props": Object {
     "fontSize": Object {
       "default": 12,
       "editor": "number",
+      "options": Object {},
       "required": false,
       "title": "Font Size",
       "type": "number",
@@ -77,6 +86,7 @@ Object {
     "isDark": Object {
       "default": false,
       "editor": "checkbox",
+      "options": Object {},
       "required": false,
       "title": "Is Dark",
       "type": "boolean",
@@ -84,6 +94,7 @@ Object {
     "items": Object {
       "default": Array [],
       "editor": "textarea",
+      "options": Object {},
       "required": false,
       "title": "Items",
       "type": "array",
@@ -91,12 +102,13 @@ Object {
     "text": Object {
       "default": "default text",
       "editor": "text",
+      "options": Object {},
       "required": false,
       "title": "Text",
       "type": "string",
     },
   },
-  "title": "Text Block",
+  "title": "Text",
 }
 `;
 
@@ -193,11 +205,14 @@ Array [
   },
   Object {
     "group": "general",
+    "icon": "extension",
     "name": "TextBlock",
+    "path": "text-block",
     "props": Object {
       "fontSize": Object {
         "default": 12,
         "editor": "number",
+        "options": Object {},
         "required": false,
         "title": "Font Size",
         "type": "number",
@@ -205,6 +220,7 @@ Array [
       "isDark": Object {
         "default": false,
         "editor": "checkbox",
+        "options": Object {},
         "required": false,
         "title": "Is Dark",
         "type": "boolean",
@@ -212,6 +228,7 @@ Array [
       "items": Object {
         "default": Array [],
         "editor": "textarea",
+        "options": Object {},
         "required": false,
         "title": "Items",
         "type": "array",
@@ -219,12 +236,13 @@ Array [
       "text": Object {
         "default": "default text",
         "editor": "text",
+        "options": Object {},
         "required": false,
         "title": "Text",
         "type": "string",
       },
     },
-    "title": "Text Block",
+    "title": "Text",
   },
 ]
 `;

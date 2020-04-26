@@ -23,3 +23,15 @@
     },
   }
 </script>
+
+<block>
+{
+  "name": "Text",
+  "description": "Block for rendering text",
+  "props": {
+    "content": {
+      "type": "textarea"
+    }
+  }
+}
+</block>
