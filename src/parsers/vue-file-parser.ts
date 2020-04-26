@@ -73,6 +73,7 @@ export class VueFileParser {
       result.props[propKey] = {
         title: jsonMeta?.props?.[propKey]?.title || parsedMeta.props[propKey].title,
         type: jsonMeta?.props?.[propKey]?.type || parsedMeta.props[propKey].type,
+        editor: jsonMeta?.props?.[propKey]?.editor || parsedMeta.props[propKey].editor,
         required: parsedMeta.props[propKey].required,
         default: jsonMeta?.props?.[propKey]?.default || parsedMeta.props[propKey].default,
         options: jsonMeta?.props?.[propKey]?.options || {},

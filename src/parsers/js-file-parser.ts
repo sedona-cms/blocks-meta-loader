@@ -2,10 +2,10 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as babel from '@babel/parser'
 import traverse from '@babel/traverse'
-import mergeWith from 'lodash/mergeWith'
 import { Expression, ObjectMethod, ObjectProperty, PatternLike, SpreadElement } from '@babel/types'
 import startCase from 'lodash/startCase'
 import { BlockMeta, BlockProp } from '../meta'
+import { typeDefaults } from '../helpers/prop-defaults'
 
 export class JsFileParser {
   parseFile(blockPath: string): BlockMeta {
@@ -78,7 +78,7 @@ export class JsFileParser {
         break
       }
       case 'Identifier':
-        result = this.parsePropIdentifier(propValue.name)
+        result = typeDefaults?.[propValue.name] || typeDefaults['String']
         break
     }
 
@@ -87,60 +87,6 @@ export class JsFileParser {
     }
 
     return result
-  }
-
-  private parsePropIdentifier(identifier: string): BlockProp {
-    switch (identifier) {
-      case 'String':
-        return {
-          type: 'string',
-          editor: 'text',
-          required: false,
-          default: '',
-        }
-      case 'Boolean':
-        return {
-          type: 'boolean',
-          editor: 'checkbox',
-          required: false,
-          default: false,
-        }
-      case 'Number':
-        return {
-          type: 'number',
-          editor: 'number',
-          required: false,
-          default: 0,
-        }
-      case 'Array':
-        return {
-          type: 'array',
-          editor: 'textarea',
-          required: false,
-          default: [],
-        }
-      case 'Object':
-        return {
-          type: 'object',
-          editor: 'textarea',
-          required: false,
-          default: {},
-        }
-      case 'Date':
-        return {
-          type: 'date',
-          editor: 'date',
-          required: false,
-          default: Date.now(),
-        }
-      default:
-        return {
-          type: 'string',
-          editor: 'text',
-          required: false,
-          default: '',
-        }
-    }
   }
 
   /**
@@ -186,7 +132,7 @@ export class JsFileParser {
     }
 
     const blockProp: BlockProp = {}
-    const defaultProp = this.parsePropIdentifier(propType)
+    const defaultProp = typeDefaults?.[propType] || typeDefaults['String']
     for (const propKey of Object.keys(defaultProp)) {
       if (propKey === 'type') {
         blockProp.type = defaultProp.type

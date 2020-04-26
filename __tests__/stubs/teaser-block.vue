@@ -31,11 +31,10 @@
   "icon": "image",
   "props": {
     "caption": {
-      "type": "text",
       "default": "default text"
     },
     "variant": {
-      "type": "radio-group",
+      "editor": "radio-group",
       "title": "Variants",
       "default": "red",
       "options": {

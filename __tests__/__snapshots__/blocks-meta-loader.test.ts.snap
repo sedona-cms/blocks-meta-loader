@@ -165,13 +165,15 @@ Array [
     "props": Object {
       "caption": Object {
         "default": "default text",
+        "editor": "text",
         "options": Object {},
         "required": false,
         "title": "Caption",
-        "type": "text",
+        "type": "string",
       },
       "variant": Object {
         "default": "red",
+        "editor": "radio-group",
         "options": Object {
           "variants": Array [
             "red",
@@ -184,7 +186,7 @@ Array [
         },
         "required": false,
         "title": "Variants",
-        "type": "radio-group",
+        "type": "string",
       },
     },
     "title": "Teaser block",
