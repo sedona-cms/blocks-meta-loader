@@ -2,6 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as babel from '@babel/parser'
 import traverse from '@babel/traverse'
+import mergeWith from 'lodash/mergeWith'
 import { Expression, ObjectMethod, ObjectProperty, PatternLike, SpreadElement } from '@babel/types'
 import startCase from 'lodash/startCase'
 import { BlockMeta, BlockProp } from '../meta'
@@ -92,43 +93,50 @@ export class JsFileParser {
     switch (identifier) {
       case 'String':
         return {
-          type: 'text',
+          type: 'string',
+          editor: 'text',
           required: false,
           default: '',
         }
       case 'Boolean':
         return {
-          type: 'checkbox',
+          type: 'boolean',
+          editor: 'checkbox',
           required: false,
           default: false,
         }
       case 'Number':
         return {
           type: 'number',
+          editor: 'number',
           required: false,
           default: 0,
         }
       case 'Array':
         return {
-          type: 'textarea',
+          type: 'array',
+          editor: 'textarea',
           required: false,
           default: [],
         }
       case 'Object':
         return {
-          type: 'textarea',
+          type: 'object',
+          editor: 'textarea',
           required: false,
           default: {},
         }
       case 'Date':
         return {
           type: 'date',
+          editor: 'date',
           required: false,
           default: Date.now(),
         }
       default:
         return {
-          type: 'text',
+          type: 'string',
+          editor: 'text',
           required: false,
           default: '',
         }
@@ -157,9 +165,14 @@ export class JsFileParser {
           result.type = propType.toLowerCase()
           break
         }
-        case 'default':
+        case 'default': {
+          if (propertyItem.value.type === 'BooleanLiteral') {
+            result.default = propertyItem.value.value
+            break
+          }
           result.default = propertyItem.value?.['value'] || ''
           break
+        }
         case 'required':
           if (propertyItem.value.type !== 'BooleanLiteral') {
             result.required = false
@@ -172,9 +185,16 @@ export class JsFileParser {
       }
     }
 
+    const blockProp: BlockProp = {}
     const defaultProp = this.parsePropIdentifier(propType)
-    result = Object.assign(defaultProp, result)
+    for (const propKey of Object.keys(defaultProp)) {
+      if (propKey === 'type') {
+        blockProp.type = defaultProp.type
+        continue
+      }
+      blockProp[propKey] = result?.[propKey] || defaultProp[propKey]
+    }
 
-    return result
+    return blockProp
   }
 }

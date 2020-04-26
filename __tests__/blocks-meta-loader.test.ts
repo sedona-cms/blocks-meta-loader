@@ -10,6 +10,13 @@ test('load block from single file', async () => {
   expect(blockMeta).toMatchSnapshot()
 })
 
+test('load block from single js file', async () => {
+  const blockFilePath = path.resolve(__dirname, 'stubs/feature-block.js')
+  const blockMeta = await blocksMetaLoader.getMetaFromFile(blockFilePath)
+
+  expect(blockMeta).toMatchSnapshot()
+})
+
 test('load block from not exists single file', () => {
   const blockFilePath = path.resolve(__dirname, 'stubs/wrong-file-path.vue')
 

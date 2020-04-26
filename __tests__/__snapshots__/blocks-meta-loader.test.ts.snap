@@ -8,24 +8,28 @@ Array [
     "props": Object {
       "fontSize": Object {
         "default": 12,
+        "editor": "number",
         "required": false,
         "title": "Font Size",
         "type": "number",
       },
       "isDark": Object {
         "default": false,
+        "editor": "checkbox",
         "required": false,
         "title": "Is Dark",
-        "type": "checkbox",
+        "type": "boolean",
       },
       "items": Object {
         "default": Array [],
+        "editor": "textarea",
         "required": false,
         "title": "Items",
         "type": "array",
       },
       "text": Object {
         "default": "default text",
+        "editor": "text",
         "required": false,
         "title": "Text",
         "type": "string",
@@ -40,9 +44,17 @@ Array [
     "props": Object {
       "color": Object {
         "default": "",
+        "editor": "text",
         "required": true,
         "title": "Color",
         "type": "string",
+      },
+      "hasTitle": Object {
+        "default": false,
+        "editor": "checkbox",
+        "required": false,
+        "title": "Has Title",
+        "type": "boolean",
       },
     },
     "title": "Feature Block",
@@ -57,30 +69,59 @@ Object {
   "props": Object {
     "fontSize": Object {
       "default": 12,
+      "editor": "number",
       "required": false,
       "title": "Font Size",
       "type": "number",
     },
     "isDark": Object {
       "default": false,
+      "editor": "checkbox",
       "required": false,
       "title": "Is Dark",
-      "type": "checkbox",
+      "type": "boolean",
     },
     "items": Object {
       "default": Array [],
+      "editor": "textarea",
       "required": false,
       "title": "Items",
       "type": "array",
     },
     "text": Object {
       "default": "default text",
+      "editor": "text",
       "required": false,
       "title": "Text",
       "type": "string",
     },
   },
   "title": "Text Block",
+}
+`;
+
+exports[`load block from single js file 1`] = `
+Object {
+  "group": "general",
+  "name": "FeatureBlock",
+  "path": "feature-block",
+  "props": Object {
+    "color": Object {
+      "default": "",
+      "editor": "text",
+      "required": true,
+      "title": "Color",
+      "type": "string",
+    },
+    "hasTitle": Object {
+      "default": false,
+      "editor": "checkbox",
+      "required": false,
+      "title": "Has Title",
+      "type": "boolean",
+    },
+  },
+  "title": "Feature Block",
 }
 `;
 
@@ -93,9 +134,17 @@ Array [
     "props": Object {
       "color": Object {
         "default": "",
+        "editor": "text",
         "required": true,
         "title": "Color",
         "type": "string",
+      },
+      "hasTitle": Object {
+        "default": false,
+        "editor": "checkbox",
+        "required": false,
+        "title": "Has Title",
+        "type": "boolean",
       },
     },
     "title": "Feature Block",
@@ -146,24 +195,28 @@ Array [
     "props": Object {
       "fontSize": Object {
         "default": 12,
+        "editor": "number",
         "required": false,
         "title": "Font Size",
         "type": "number",
       },
       "isDark": Object {
         "default": false,
+        "editor": "checkbox",
         "required": false,
         "title": "Is Dark",
-        "type": "checkbox",
+        "type": "boolean",
       },
       "items": Object {
         "default": Array [],
+        "editor": "textarea",
         "required": false,
         "title": "Items",
         "type": "array",
       },
       "text": Object {
         "default": "default text",
+        "editor": "text",
         "required": false,
         "title": "Text",
         "type": "string",

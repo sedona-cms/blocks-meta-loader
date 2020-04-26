@@ -13,6 +13,7 @@ export type BlockMeta = {
 export type BlockProp = {
   title?: string
   type?: 'string' | 'boolean' | 'number' | 'array' | 'object' | 'date' | string
+  editor?: 'text' | 'textarea' | 'number' | 'checkbox' | 'date' | string
   required?: boolean
   default?: any
   options?: any

@@ -7,5 +7,9 @@ export default Vue.extends({
       type: String,
       required: true,
     },
+    hasTitle: {
+      type: Boolean,
+      default: false,
+    },
   },
 })
