@@ -31,7 +31,8 @@
   "icon": "image",
   "props": {
     "caption": {
-      "default": "default text"
+      "default": "default text",
+      "editor": "textarea"
     },
     "variant": {
       "editor": "radio-group",
