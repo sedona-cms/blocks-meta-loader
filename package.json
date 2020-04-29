@@ -35,10 +35,10 @@
     "@types/jest": "^25.2.1",
     "@types/lodash": "^4.14.150",
     "@types/node": "^12.12.37",
-    "babel-jest": "^25.4.0",
+    "babel-jest": "^25.5.1",
     "husky": "^4.2.5",
-    "jest": "^25.4.0",
-    "lint-staged": "^10.1.7",
+    "jest": "^25.5.1",
+    "lint-staged": "^10.2.0",
     "prettier": "^2.0.5",
     "typescript": "^3.8.3",
     "vue": "^2.6"
