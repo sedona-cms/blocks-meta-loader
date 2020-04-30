@@ -162,6 +162,13 @@ Array [
     "title": "Feature Block",
   },
   Object {
+    "group": "general",
+    "name": "HeroBlock",
+    "path": "hero-block",
+    "props": Object {},
+    "title": "Hero Block",
+  },
+  Object {
     "group": "images",
     "icon": "image",
     "name": "ImageBlock",
@@ -177,7 +184,7 @@ Array [
     "props": Object {
       "caption": Object {
         "default": "default text",
-        "editor": "text",
+        "editor": "textarea",
         "options": Object {},
         "required": false,
         "title": "Caption",

@@ -23,14 +23,21 @@ export class VueFileParser {
     }
 
     const parsed = new JsFileParser().parseContent(blockFile?.script?.content || '')
-    if (blockMeta === undefined) {
-      return parsed
+    if (parsed !== undefined && blockMeta === undefined) {
+      return {
+        ...parsed,
+        path: path.parse(blockPath).name,
+      }
     }
 
-    return {
-      ...this.getNormalizedBlockMeta(parsed, blockMeta),
-      path: path.parse(blockPath).name,
+    if (blockMeta !== undefined) {
+      return {
+        ...this.getNormalizedBlockMeta(parsed, blockMeta),
+        path: path.parse(blockPath).name,
+      }
     }
+
+    throw new Error(`Error parsing block in path ${blockPath}`)
   }
 
   private readBlockFile(blockPath: string): SFCDescriptor {

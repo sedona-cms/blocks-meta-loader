@@ -49,3 +49,14 @@ test('load blocks from wrong directory', () => {
 
   expect(blocksMetaLoader.getMetaFromDirectory(blocksPath)).rejects.toThrow()
 })
+
+test('load block from vue file without a meta information provided', async () => {
+  const blocksPath = path.resolve(__dirname, 'stubs/hero-block.vue')
+  const meta = await blocksMetaLoader.getMetaFromFile(blocksPath)
+
+  expect(meta).toHaveProperty('name', 'HeroBlock')
+  expect(meta).toHaveProperty('title', 'Hero Block')
+  expect(meta).toHaveProperty('group', 'general')
+  expect(meta).toHaveProperty('props', {})
+  expect(meta).toHaveProperty('path', 'hero-block')
+})
