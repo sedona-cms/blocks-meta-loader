@@ -20,15 +20,15 @@
     "url": "https://github.com/sedona-cms/blocks-meta-loader/issues"
   },
   "dependencies": {
-    "@babel/parser": "^7.9.4",
-    "@babel/traverse": "^7.9.5",
+    "@babel/parser": "^7.9.6",
+    "@babel/traverse": "^7.9.6",
     "@vue/component-compiler-utils": "^3.1.2",
     "ajv": "^6.12.2",
     "lodash": "^4.17.15",
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-env": "^7.9.6",
     "@babel/preset-typescript": "^7.9.0",
     "@sedona-cms/eslint-config": "^1.0.1",
     "@types/babel-traverse": "^6.25.5",
@@ -37,7 +37,7 @@
     "@types/node": "^12.12.37",
     "babel-jest": "^25.5.1",
     "husky": "^4.2.5",
-    "jest": "^25.5.1",
+    "jest": "^25.5.2",
     "lint-staged": "^10.2.0",
     "prettier": "^2.0.5",
     "typescript": "^3.8.3",
