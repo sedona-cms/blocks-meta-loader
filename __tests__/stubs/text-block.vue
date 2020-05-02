@@ -10,7 +10,7 @@
     props: {
       text: {
         type: String,
-        default: 'default text'
+        default: 'default text',
       },
       items: {
         type: Array,
@@ -18,6 +18,12 @@
       fontSize: {
         type: Number,
         default: 12,
+      },
+      fontWeight: {
+        type: Number,
+        "default": 600,
+        required: 'wrongs-value',
+        validator: (value) => value > 300,
       },
       isDark: Boolean,
     },

@@ -127,6 +127,7 @@ export class JsFileParser {
           result.required = propertyItem.value.value
           break
         case 'validator':
+          console.warn('Validator in props does not supported yet')
           break
       }
     }
