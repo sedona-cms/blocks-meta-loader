@@ -5,9 +5,12 @@
   "main": "dist/index.js",
   "typings": "dist/types/index.d.ts",
   "scripts": {
-    "lint": "make -f Makefile lint",
-    "test": "make -f Makefile test",
-    "build": "make -f Makefile build"
+    "lint": "make lint",
+    "test": "make test",
+    "build": "make build",
+    "release:patch": "dotenv release-it patch",
+    "release:minor": "dotenv release-it minor",
+    "release:major": "dotenv release-it major"
   },
   "keywords": [],
   "author": "Ivan Kalinichenko <kalinichenko@constlab.ru>",
@@ -36,10 +39,12 @@
     "@types/lodash": "^4.14.151",
     "@types/node": "^12.12.39",
     "babel-jest": "^25.5.1",
+    "dotenv-cli": "^3.1.0",
     "husky": "^4.2.5",
     "jest": "^25.5.4",
     "lint-staged": "^10.2.4",
     "prettier": "^2.0.5",
+    "release-it": "^13.6.1",
     "typescript": "^3.9.2",
     "vue": "^2.6"
   },

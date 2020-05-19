@@ -1,0 +1,15 @@
+__tests__/
+coverage/
+
+.babelrc
+.env
+.env.example
+.eslintignore
+.eslintrc.js
+.gitignore
+.prettierrc
+.release-it.json
+jest.config.js
+Makefile
+tsconfig.build.json
+tsconfig.json
