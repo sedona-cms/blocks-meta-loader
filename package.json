@@ -36,8 +36,8 @@
     "@sedona-cms/eslint-config": "^1.0.4",
     "@types/babel-traverse": "^6.25.5",
     "@types/jest": "^25.2.3",
-    "@types/lodash": "^4.14.151",
-    "@types/node": "^12.12.39",
+    "@types/lodash": "^4.14.152",
+    "@types/node": "^12.12.41",
     "babel-jest": "^25.5.1",
     "dotenv-cli": "^3.1.0",
     "husky": "^4.2.5",
@@ -45,7 +45,7 @@
     "lint-staged": "^10.2.4",
     "prettier": "^2.0.5",
     "release-it": "^13.6.1",
-    "typescript": "^3.9.2",
+    "typescript": "^3.9.3",
     "vue": "^2.6"
   },
   "husky": {
