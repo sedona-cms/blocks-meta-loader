@@ -157,6 +157,12 @@ exports[`load blocks from directory 1`] = `
 Array [
   Object {
     "group": "general",
+    "name": "BlockTemplateOnly",
+    "path": "block-template-only",
+    "props": Object {},
+  },
+  Object {
+    "group": "general",
     "name": "FeatureBlock",
     "path": "feature-block",
     "props": Object {

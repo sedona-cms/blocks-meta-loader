@@ -65,7 +65,6 @@ test('load block from vue file  with only template block', async () => {
   const blocksPath = path.resolve(__dirname, 'stubs/block-template-only.vue')
   const meta = await blocksMetaLoader.getMetaFromFile(blocksPath)
 
-  console.log(meta)
   expect(meta).toHaveProperty('name', 'BlockTemplateOnly')
   expect(meta).toHaveProperty('group', 'general')
   expect(meta).toHaveProperty('props', {})
