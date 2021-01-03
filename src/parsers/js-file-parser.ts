@@ -1,6 +1,6 @@
 import * as fs from 'fs'
-import * as path from 'path'
 import * as babel from '@babel/parser'
+import path from 'path'
 import traverse from '@babel/traverse'
 import { Expression, ObjectMethod, ObjectProperty, PatternLike, SpreadElement } from '@babel/types'
 import startCase from 'lodash/startCase'
@@ -25,7 +25,7 @@ export class JsFileParser {
     const ast = babel.parse(script, { sourceType: 'module' })
     traverse(ast, {
       ObjectProperty(scope) {
-        const keyName = scope.node.key.name
+        const keyName = scope.node.key['name']
         switch (keyName) {
           case 'name': {
             result.name = scope.node?.value['value'] || ''
@@ -55,7 +55,7 @@ export class JsFileParser {
   private parseProps(properties: ObjectProperty[]): { [key: string]: BlockProp } {
     const result: { [key: string]: BlockProp } = {}
     for (const property of properties) {
-      const propName = property.key?.name || 'unknown'
+      const propName = property.key?.['name'] || 'unknown'
       result[propName] = {
         title: startCase(propName),
         ...this.parsePropValue(property.value),
@@ -98,13 +98,13 @@ export class JsFileParser {
   private parsePropObject(
     properties: Array<ObjectMethod | ObjectProperty | SpreadElement>
   ): BlockProp {
-    let result: BlockProp = {}
+    const result: BlockProp = {}
     let propType = 'String'
     for (const propertyItem of properties) {
       if (propertyItem.type !== 'ObjectProperty') {
         continue
       }
-      switch (propertyItem.key?.name) {
+      switch (propertyItem.key?.['name']) {
         case 'type': {
           propType =
             propertyItem.value.type === 'Identifier' ? propertyItem.value.name.toString() : 'String'
