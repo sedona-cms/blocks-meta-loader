@@ -60,3 +60,14 @@ test('load block from vue file without a meta information provided', async () =>
   expect(meta).toHaveProperty('props', {})
   expect(meta).toHaveProperty('path', 'hero-block')
 })
+
+test('load block from vue file  with only template block', async () => {
+  const blocksPath = path.resolve(__dirname, 'stubs/block-template-only.vue')
+  const meta = await blocksMetaLoader.getMetaFromFile(blocksPath)
+
+  console.log(meta)
+  expect(meta).toHaveProperty('name', 'BlockTemplateOnly')
+  expect(meta).toHaveProperty('group', 'general')
+  expect(meta).toHaveProperty('props', {})
+  expect(meta).toHaveProperty('path', 'block-template-only')
+})

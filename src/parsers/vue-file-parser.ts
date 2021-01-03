@@ -1,7 +1,9 @@
 import * as fs from 'fs'
-import path from 'path'
 import * as templateCompiler from 'vue-template-compiler'
+import path from 'path'
 import Ajv from 'ajv'
+import camelCase from 'lodash/camelCase'
+import upperFirst from 'lodash/upperFirst'
 import { SFCDescriptor, parse } from '@vue/component-compiler-utils'
 import { VueTemplateCompiler } from '@vue/component-compiler-utils/dist/types'
 import { JsFileParser } from './js-file-parser'
@@ -23,11 +25,20 @@ export class VueFileParser {
     }
 
     const parsed = new JsFileParser().parseContent(blockFile?.script?.content || '')
+
     if (parsed !== undefined && blockMeta === undefined) {
-      return {
+      const blockFileName = path.parse(blockPath).name
+
+      const result: BlockMeta = {
         ...parsed,
-        path: path.parse(blockPath).name,
+        path: blockFileName,
       }
+
+      if (result.name === undefined) {
+        result.name = upperFirst(camelCase(blockFileName))
+      }
+
+      return result
     }
 
     if (blockMeta !== undefined) {
