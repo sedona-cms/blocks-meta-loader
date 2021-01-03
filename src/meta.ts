@@ -16,5 +16,5 @@ export type BlockProp = {
   editor?: 'text' | 'textarea' | 'number' | 'checkbox' | 'date' | string
   required?: boolean
   default?: unknown
-  options?: unknown
+  options?: Record<string, unknown>
 }
